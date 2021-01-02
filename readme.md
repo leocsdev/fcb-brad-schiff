@@ -46,7 +46,7 @@ asdf
 
 ```css
 img {
-	width: 100%;
+  width: 100%;
 }
 ```
 
