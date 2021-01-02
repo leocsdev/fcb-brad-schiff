@@ -92,9 +92,28 @@ asdf
 
 
 
+### Chrome DevTools & Finishing The Design Chapter
+
+**Taking Notes**
+
+- avoid feeling overwhelmed
+- avoid information overload
 
 
 
+**Take note of topics you heard, but haven't actually covered yet**
+
+* Not really necessary to learn at the moment
+
+
+
+**Figma**
+
+* Can also be used for vector illustration
+
+
+
+**Animate.css**
 
 
 
