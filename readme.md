@@ -4,43 +4,27 @@
 
 [Youtube Full Playlist](https://www.youtube.com/playlist?list=PLpcSpRrAaOargYaCNYxZCiFIp9YTqEl-l)
 
-
-
 ### Free Coding Bootcamp - Brad's Bootcamp Intro
 
 asdf
-
-
-
-
 
 ### CSS Tutorial: Basic Selectors and Styles
 
 asdf
 
-
-
-
-
 ### CSS Layout: Flexbox and Grid Basics
 
 [Finished Product Example](https://codepen.io/learnwebcode/pen/vYGExYx?editors=1100)
 
-
-
-
-
 ### Creating HTML Files, Linking Between Pages, and Adding Your Own Images
 
-[Sample](/fcb-04/index.html){:target="blank"}
+[Sample](/fcb-04/index.html){:target="\_blank"}
 
 **Discussed codepen Limitations**
 
-* href links
-* image upload
-* url
-
-
+- href links
+- image upload
+- url
 
 **Image responsive**
 
@@ -49,8 +33,6 @@ img {
   width: 100%;
 }
 ```
-
-
 
 **Pixel Perfect Alignment**
 
@@ -68,29 +50,19 @@ img {
 }
 ```
 
-
-
- **Image Resizing**
+**Image Resizing**
 
 saving data bandwidth
 
-gimp 
+gimp
 
 pixlr pixlr.com
 
 figma (recommended)
 
-
-
-
-
 ### Free Hosting With GitHub Pages: Push Your Site Live
 
 asdf
-
-
-
-
 
 ### Chrome DevTools & Finishing The Design Chapter
 
@@ -99,49 +71,12 @@ asdf
 - avoid feeling overwhelmed
 - avoid information overload
 
-
-
 **Take note of topics you heard, but haven't actually covered yet**
 
-* Not really necessary to learn at the moment
-
-
+- Not really necessary to learn at the moment
 
 **Figma**
 
-* Can also be used for vector illustration
-
-
+- Can also be used for vector illustration
 
 **Animate.css**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
