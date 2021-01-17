@@ -25,6 +25,18 @@ async function start() {
 
 start();
 
+// data from dogs api (or from any other api) is not an array, it's an object with lots of properties
+//  JavaScript has a way to return an array based on object's property name by means of Object.keys(param)
+// map() will return a brand new array, but when converted to text it well be separated by commas
+// join() will get rid of commas
 function createBreedList(breedList) {
-  console.log(breedList);
+  document.getElementById("breed").innerHTML = `
+  <select>
+    <option>Choose a dog breed</option>
+    ${Object.keys(breedList)
+      .map(function (breed) {
+        return `<option>${breed}</option>`;
+      })
+      .join("")}
+  </select>`;
 }
