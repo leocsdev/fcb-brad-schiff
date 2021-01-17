@@ -80,3 +80,40 @@ asdf
 - Can also be used for vector illustration
 
 **Animate.css**
+
+
+
+### fcb-09 Dogs, JS and API
+
+**Fetch, Promises, and Async Await**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
