@@ -29,9 +29,10 @@ start();
 //  JavaScript has a way to return an array based on object's property name by means of Object.keys(param)
 // map() will return a brand new array, but when converted to text it well be separated by commas
 // join() will get rid of commas
+// loadByBreed(this.value) the this keyword refers to the select element
 function createBreedList(breedList) {
   document.getElementById("breed").innerHTML = `
-  <select>
+  <select onchange="loadByBreed(this.value)">
     <option>Choose a dog breed</option>
     ${Object.keys(breedList)
       .map(function (breed) {
@@ -39,4 +40,11 @@ function createBreedList(breedList) {
       })
       .join("")}
   </select>`;
+}
+
+function loadByBreed(breed) {
+  // load all breeds selected except the "Choose a dog breed" option
+  if (breed != "Choose a dog breed") {
+    // alert(breed);
+  }
 }
