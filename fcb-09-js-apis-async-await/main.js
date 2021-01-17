@@ -15,7 +15,7 @@
 
 // MODERN WAY OF PROMISES
 async function start() {
-  // await keyword will prevent the code to run until fetch(promise) is completed
+  // await keyword will prevent the code to run until fetch - promise is completed
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
   const data = await response.json();
   // console.log(data);
@@ -25,26 +25,28 @@ async function start() {
 
 start();
 
-// data from dogs api (or from any other api) is not an array, it's an object with lots of properties
-//  JavaScript has a way to return an array based on object's property name by means of Object.keys(param)
+// data from dogs api (or from any other api) is not an array, its an object with lots of properties
+//  JavaScript has a way to return an array based on objects property name by means of Object.keys(param)
 // map() will return a brand new array, but when converted to text it well be separated by commas
 // join() will get rid of commas
 // loadByBreed(this.value) the this keyword refers to the select element
 function createBreedList(breedList) {
   document.getElementById("breed").innerHTML = `
-  <select onchange="loadByBreed(this.value)">
-    <option>Choose a dog breed</option>
-    ${Object.keys(breedList)
-      .map(function (breed) {
-        return `<option>${breed}</option>`;
-      })
-      .join("")}
-  </select>`;
+    <select onchange="loadByBreed(this.value)">
+      <option>Choose a dog breed</option>
+      ${Object.keys(breedList)
+        .map(function (breed) {
+          return `<option>${breed}</option>`;
+        })
+        .join("")}
+    </select>
+  `;
 }
 
-function loadByBreed(breed) {
-  // load all breeds selected except the "Choose a dog breed" option
+async function loadByBreed(breed) {
   if (breed != "Choose a dog breed") {
-    // alert(breed);
+    const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
+    const data = await response.json();
+    console.log(data);
   }
 }
