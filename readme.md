@@ -81,39 +81,22 @@ asdf
 
 **Animate.css**
 
-
-
 ### fcb-09 Dogs, JS and API
 
 **Fetch, Promises, and Async Await**
+[API Dog Slideshow](/fcb-09-js-apis-async-await/index.html){:target="\_blank"}
 
+**Public APIs**
 
+`https://github.com/public-apis/public-apis`
 
+List of all available public APIs
 
+**API**
 
+- Application Programming Interface
+- Organized way for one application to communicate with another different application
 
+**Endpoints**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- URLs of the API
