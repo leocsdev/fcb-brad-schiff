@@ -18,12 +18,14 @@ let deleteFirstPhotoDelay;
 
 // MODERN WAY OF PROMISES
 async function start() {
-  // await keyword will prevent the code to run until fetch - promise is completed
-  const response = await fetch("https://dog.ceo/api/breeds/list/all");
-  const data = await response.json();
-  // console.log(data);
-
-  createBreedList(data.message);
+  try {
+    // await keyword will prevent the code to run until fetch - promise is completed
+    const response = await fetch("https://dog.ceo/api/breeds/list/all");
+    const data = await response.json();
+    createBreedList(data.message);
+  } catch (e) {
+    console.log("There was a problem fetching the breed list.");
+  }
 }
 
 start();
