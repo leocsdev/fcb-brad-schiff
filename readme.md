@@ -84,6 +84,7 @@ asdf
 ### fcb-09 Dogs, JS and API
 
 **Fetch, Promises, and Async Await**
+
 [API Dog Slideshow](/fcb-09-js-apis-async-await/index.html){:target="\_blank"}
 
 **Public APIs**
