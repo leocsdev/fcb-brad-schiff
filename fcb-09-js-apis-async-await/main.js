@@ -13,6 +13,9 @@
 //     });
 //   });
 
+let timer;
+let deleteFirstPhotoDelay;
+
 // MODERN WAY OF PROMISES
 async function start() {
   // await keyword will prevent the code to run until fetch - promise is completed
@@ -55,12 +58,62 @@ async function loadByBreed(breed) {
 }
 
 function createSlideShow(images) {
-  document.getElementById("slideshow").innerHTML = `
-  <div
-    class="slide"
-    style="
-      background-image: url('${images[0]}');
-    "
-  >
-  </div>`;
+  let currentPosition = 0;
+
+  // cancel existing timeouts and intervals
+  clearInterval(timer);
+  clearTimeout(deleteFirstPhotoDelay);
+
+  // do this if images from API is more than 1
+  if (images.length > 1) {
+    document.getElementById("slideshow").innerHTML = `
+      <div
+        class="slide"
+        style="
+          background-image: url('${images[0]}');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('${images[1]}');
+        "
+      ></div>`;
+    currentPosition += 2;
+    if (images.length == 2) {
+      currentPosition = 0;
+    }
+    timer = setInterval(nextSlide, 3000);
+  } else {
+    document.getElementById("slideshow").innerHTML = `
+      <div
+        class="slide"
+        style="
+          background-image: url('${images[0]}');
+        "
+      ></div>
+      <div class="slide"></div>`;
+  }
+
+  function nextSlide() {
+    document.getElementById("slideshow").insertAdjacentHTML(
+      "beforeend",
+      `<div
+        class="slide"
+        style="
+          background-image: url('${images[currentPosition]}');
+        "
+      >
+      </div>`
+    );
+    deleteFirstPhotoDelay = setTimeout(function () {
+      document.querySelector(".slide").remove();
+    }, 1000);
+
+    if (currentPosition + 1 >= images.length) {
+      currentPosition = 0;
+    } else {
+      currentPosition++;
+    }
+  }
 }
