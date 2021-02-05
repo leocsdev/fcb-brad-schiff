@@ -29,6 +29,7 @@ function updateProblem() {
   ourField.focus();
 }
 
+// Run on load
 updateProblem();
 
 // Generate random number
@@ -50,59 +51,68 @@ function generateProblem() {
   };
 }
 
+// Call handleSubmit function when user submit the answer
 ourForm.addEventListener("submit", handleSubmit);
 
+// Check answer and process logic upon submit
 function handleSubmit(e) {
+  // Prevent form default behavior
   e.preventDefault();
 
+  // Create var for correct answer
   let correctAnswer;
 
+  // get the current problem set
   const p = state.currentProblem;
 
-  // check the operator and compute
+  // check the operator and compute correct answer
   if (p.operator == "+") correctAnswer = p.numberOne + p.numberTwo;
   if (p.operator == "-") correctAnswer = p.numberOne - p.numberTwo;
   if (p.operator == "x") correctAnswer = p.numberOne * p.numberTwo;
 
   // check if user enter the correct answer
   if (parseInt(ourField.value, 10) === correctAnswer) {
-    // add 1 to score if answer is correct
+    // add 1 to score if user answer is correct
     state.score++;
 
-    // display points needed to html
+    // Update points needed to win in html
     pointsNeeded.textContent = 10 - state.score;
 
-    // get a new set of problem
+    // then, get a new set of problem
     updateProblem();
   } else {
-    // Add 1 to wrong answer if answer is wrong
+    // Add 1 to wrong answer if user answer is wrong
     state.wrongAnswers++;
 
-    // display allowed mistakes to html
+    // Update allowed mistakes in html
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
   }
 
-  // check if user won or lost
+  // Check if user won or lost
   checkLogic();
 }
 
 function checkLogic() {
-  // check if user won
+  // Check if user won
   if (state.score === 10) {
+    // Send message if won
     alert("Congrats! You won!");
 
-    // reset game
+    // Then, reset game
     resetGame();
   }
-  // check if user lost
+
+  // Check if user lost
   if (state.wrongAnswers === 3) {
+    // Send message if lost
     alert("Sorry, You lost.");
 
-    // reset game
+    // Then, reset game
     resetGame();
   }
 }
 
+// Reset game
 function resetGame() {
   // get a new set of problem
   updateProblem();
