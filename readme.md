@@ -101,3 +101,44 @@ List of all available public APIs
 **Endpoints**
 
 - URLs of the API
+
+
+
+### fcb-09 Math Game
+
+JavaScript Game: Interactive Questions With CSS Transitions & Animations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
