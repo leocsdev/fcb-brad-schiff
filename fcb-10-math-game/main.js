@@ -109,6 +109,7 @@ function checkLogic() {
   // Check if user won
   if (state.score === 10) {
     // Send message if won
+    endMessage.style.color = `green`;
     endMessage.textContent = `Congrats! You won.`;
 
     // Show overlay
@@ -123,6 +124,7 @@ function checkLogic() {
   // Check if user lost
   if (state.wrongAnswers === 3) {
     // Send message if lost
+    endMessage.style.color = `red`;
     endMessage.textContent = `Sorry. You lost.`;
 
     // Show overlay

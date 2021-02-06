@@ -1,17 +1,43 @@
+/* Add Open Sans font */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
+/* Initialize body */
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
   font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .main-ui {
-  max-width: 800px;
+  /* Set max width and use full screen height */
+  max-width: 1200px;
+  height: 100vh;
   margin: 0 auto;
+  padding: 0 1rem;
 
+  /* Set content to center */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
+}
+
+.problem {
+  /* font-size: 5rem; */
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.our-form input,
+.our-form button {
+  font-size: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .boxes {
@@ -60,6 +86,16 @@ body {
   flex: 1;
 }
 
+.points-needed {
+  color: green;
+  font-weight: 700;
+}
+
+.mistakes-allowed {
+  color: red;
+  font-weight: 700;
+}
+
 .overlay {
   /* Grab the full screen */
   position: fixed;
@@ -69,7 +105,7 @@ body {
   right: 0;
 
   /* Add a semi see-through white background */
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
 
   /* Center overlay content */
   display: flex;
@@ -83,6 +119,24 @@ body {
   /* Animate */
   transition: all 0.33s ease-out;
   transform: scaleX(1.2);
+}
+
+.overlay .overlay-inner {
+  text-align: center;
+}
+
+.overlay .overlay-inner .end-message {
+  font-size: clamp(3rem, 10vw, 8rem);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.overlay .overlay-inner .reset-button {
+  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background-color: #4338e7;
+  color: #fff;
 }
 
 /* If body has class of overlay-is-open, show overlay */
@@ -112,7 +166,5 @@ body.overlay-is-open .main-ui {
 }
 
 .animate-wrong {
-  /* color: red; */
-
   animation: 0.45s showError;
 }
