@@ -81,3 +81,26 @@ body.overlay-is-open .overlay {
 body.overlay-is-open .main-ui {
   filter: blur(4px);
 }
+
+/* Turn problem colored red when user inputs wrong answer */
+@keyframes showError {
+  50% {
+    color: red;
+    transform: scaleX(1.2);
+  }
+
+  100% {
+    color: #000;
+    transform: scaleX(1);
+  }
+}
+
+.animate-wrong {
+  /* color: red; */
+
+  animation: 0.45s showError;
+}
+
+.problem {
+  text-align: center;
+}

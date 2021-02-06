@@ -93,6 +93,12 @@ function handleSubmit(e) {
 
     // Update allowed mistakes in html
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
+
+    problemElement.classList.add("animate-wrong");
+
+    setTimeout(() => {
+      problemElement.classList.remove("animate-wrong");
+    }, 451);
   }
 
   // Check if user won or lost
@@ -103,7 +109,6 @@ function checkLogic() {
   // Check if user won
   if (state.score === 10) {
     // Send message if won
-    // alert("Congrats! You won!");
     endMessage.textContent = `Congrats! You won.`;
 
     // Show overlay
@@ -113,15 +118,11 @@ function checkLogic() {
     setTimeout(() => {
       resetButton.focus();
     }, 331);
-
-    // // Then, reset game
-    // resetGame();
   }
 
   // Check if user lost
   if (state.wrongAnswers === 3) {
     // Send message if lost
-    // alert("Sorry, You lost.");
     endMessage.textContent = `Sorry. You lost.`;
 
     // Show overlay
@@ -131,9 +132,6 @@ function checkLogic() {
     setTimeout(() => {
       resetButton.focus();
     }, 331);
-
-    // // Then, reset game
-    // resetGame();
   }
 }
 
