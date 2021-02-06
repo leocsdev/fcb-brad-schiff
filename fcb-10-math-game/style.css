@@ -1,3 +1,45 @@
-/* body {
-  background-color: blue;
-} */
+.boxes {
+  display: flex;
+  width: 100%;
+}
+
+.progress {
+  /* Make a border except the right side */
+  border: 1px solid #c7c7c7;
+  border-right: none;
+
+  position: relative;
+}
+
+.progress-inner {
+  position: absolute;
+  /* Use full length by setting top and bottom to 0 */
+  top: 0;
+  bottom: 0;
+
+  /* Use full width */
+  width: 100%;
+
+  background-color: #7ecc00;
+  opacity: 0.57;
+
+  /* Re-render the progress inner instead of modifying the width */
+  /* Set it to 0 and progresses when user gets correct answer */
+  transform: scaleX(0);
+
+  /* Align the transformed progress inner to the left */
+  /* first value (center) - controls verical placement */
+  /* second value (left) - controls horizontal placement */
+  transform-origin: center left;
+
+  /* Animate transform */
+  transition: transform 0.4s ease-out;
+}
+
+.box {
+  height: 40px;
+  border-right: 1px solid #c7c7c7;
+
+  /* Take up 1fr width each*/
+  flex: 1;
+}

@@ -3,6 +3,7 @@ const ourForm = document.querySelector(".our-form");
 const ourField = document.querySelector(".our-field");
 const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
+const progressBar = document.querySelector(".progress-inner");
 
 // initialize state of the game
 let state = {
@@ -80,6 +81,10 @@ function handleSubmit(e) {
 
     // then, get a new set of problem
     updateProblem();
+
+    // // Animate progress bar
+    // progressBar.style.transform = `scaleX(${state.score / 10})`;
+    renderProgressBar();
   } else {
     // Add 1 to wrong answer if user answer is wrong
     state.wrongAnswers++;
@@ -121,7 +126,30 @@ function resetGame() {
   state.score = 0;
   state.wrongAnswers = 0;
 
+  // // Reset progress bar
+  // progressBar.style.transform = `scaleX(0)`;
+  renderProgressBar();
+
   // reset html values
   pointsNeeded.textContent = 10;
   mistakesAllowed.textContent = 2;
 }
+
+// Progress bar
+function renderProgressBar() {
+  progressBar.style.transform = `scaleX(${state.score / 10})`;
+}
+
+// ====================
+// Test
+
+// function randomNumberRange(min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+
+//   // // The maximum is exclusive and the minimum is inclusive
+//   // return Math.floor(Math.random() * (max - min) + min);
+
+//   // Both min and max are inclusive
+//   return Math.floor(Math.random() * (max + 1 - min) + min);
+// }
