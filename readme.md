@@ -102,41 +102,7 @@ List of all available public APIs
 
 - URLs of the API
 
-
-
-### fcb-09 Math Game
+### fcb-10 Math Game
 
 JavaScript Game: Interactive Questions With CSS Transitions & Animations
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Math Game](/fcb-10-math-game/index.html){:target="\_blank"}
