@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-ui {
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .boxes {
   display: flex;
   width: 100%;
@@ -7,7 +23,7 @@
   /* Make a border except the right side */
   border: 1px solid #c7c7c7;
   border-right: none;
-
+  width: 100%;
   position: relative;
 }
 
@@ -99,8 +115,4 @@ body.overlay-is-open .main-ui {
   /* color: red; */
 
   animation: 0.45s showError;
-}
-
-.problem {
-  text-align: center;
 }
