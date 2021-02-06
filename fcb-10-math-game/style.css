@@ -43,3 +43,41 @@
   /* Take up 1fr width each*/
   flex: 1;
 }
+
+.overlay {
+  /* Grab the full screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* Add a semi see-through white background */
+  background-color: rgba(255, 255, 255, 0.8);
+
+  /* Center overlay content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Hide overlay, only shows when user wins or lose */
+  opacity: 0;
+  visibility: hidden;
+
+  /* Animate */
+  transition: all 0.33s ease-out;
+  transform: scaleX(1.2);
+}
+
+/* If body has class of overlay-is-open, show overlay */
+body.overlay-is-open .overlay {
+  opacity: 1;
+  visibility: visible;
+
+  transform: scaleX(1);
+}
+
+/* Blur the background */
+body.overlay-is-open .main-ui {
+  filter: blur(4px);
+}

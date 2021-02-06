@@ -5,6 +5,9 @@ const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
 const progressBar = document.querySelector(".progress-inner");
 
+const endMessage = document.querySelector(".end-message");
+const resetButton = document.querySelector(".reset-button");
+
 // initialize state of the game
 let state = {
   score: 0,
@@ -82,8 +85,7 @@ function handleSubmit(e) {
     // then, get a new set of problem
     updateProblem();
 
-    // // Animate progress bar
-    // progressBar.style.transform = `scaleX(${state.score / 10})`;
+    // Animate progress bar
     renderProgressBar();
   } else {
     // Add 1 to wrong answer if user answer is wrong
@@ -101,21 +103,41 @@ function checkLogic() {
   // Check if user won
   if (state.score === 10) {
     // Send message if won
-    alert("Congrats! You won!");
+    // alert("Congrats! You won!");
+    endMessage.textContent = `Congrats! You won.`;
 
-    // Then, reset game
-    resetGame();
+    // Show overlay
+    document.body.classList.add("overlay-is-open");
+
+    // Wait for overlay to come out and set focus on reset button
+    setTimeout(() => {
+      resetButton.focus();
+    }, 331);
+
+    // // Then, reset game
+    // resetGame();
   }
 
   // Check if user lost
   if (state.wrongAnswers === 3) {
     // Send message if lost
-    alert("Sorry, You lost.");
+    // alert("Sorry, You lost.");
+    endMessage.textContent = `Sorry. You lost.`;
 
-    // Then, reset game
-    resetGame();
+    // Show overlay
+    document.body.classList.add("overlay-is-open");
+
+    // Wait for overlay to come out and set focus on reset button
+    setTimeout(() => {
+      resetButton.focus();
+    }, 331);
+
+    // // Then, reset game
+    // resetGame();
   }
 }
+
+resetButton.addEventListener("click", resetGame);
 
 // Reset game
 function resetGame() {
@@ -126,13 +148,15 @@ function resetGame() {
   state.score = 0;
   state.wrongAnswers = 0;
 
-  // // Reset progress bar
-  // progressBar.style.transform = `scaleX(0)`;
+  // Reset progress bar
   renderProgressBar();
 
   // reset html values
   pointsNeeded.textContent = 10;
   mistakesAllowed.textContent = 2;
+
+  // Remove overlay
+  document.body.classList.remove("overlay-is-open");
 }
 
 // Progress bar
